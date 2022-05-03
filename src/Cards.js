@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "./Card.js";
-import DrawButton from "./DrawButton.js";
+import Button from "./Button.js";
+import "./Cards.css";
 
 const BASE_CARD_API = "http://deckofcardsapi.com/api/deck";
-
+/**
+ * Cards Componenet,
+ * 	State: deck: { deckId: str,
+ * 								drawnCards: arr,
+ * 								isShuffling: bool,
+ * 								deckFinished: bool }
+ *
+ * Renders a draw button and up to 52 cards from a given deck.
+ */
 function Cards() {
 	const [deck, setDeck] = useState({
 		deckId: null,
@@ -18,7 +27,7 @@ function Cards() {
 			const resp = await axios.get(
 				`${BASE_CARD_API}/new/shuffle/?deck_count=1`
 			);
-			setDeck(() => ({
+			setDeck((deck) => ({
 				...deck,
 				deckId: resp.data.deck_id,
 			}));
@@ -30,17 +39,39 @@ function Cards() {
 		const resp = await axios.get(
 			`${BASE_CARD_API}/${deck.deckId}/draw/?count=1`
 		);
+		const {success, remaining, cards} = resp.data;
 
-		if (resp.data.success) {
-			setDeck(() => ({
+		if (success) {
+			setDeck((deck) => ({
 				...deck,
-				drawnCards: [...deck.drawnCards, resp.data.cards[0]],
+				drawnCards: [...deck.drawnCards, cards[0]],
+				deckFinished: remaining === 0,
 			}));
 		}
-		if (resp.data.remaining === 0) {
-			setDeck(() => ({
+		// if (remaining === 0) {
+		// 	setDeck((deck) => ({
+		// 		...deck,
+
+		// 	}));
+		// }
+	}
+
+	async function shuffleCards() {
+		setDeck((deck)=> ({
+			...deck,
+			isShuffling: true
+		}));
+
+		const resp = await axios.get(
+			`${BASE_CARD_API}/${deck.deckId}/shuffle`
+			);
+
+		if (resp.data.success) {
+			setDeck((deck) => ({
 				...deck,
-				deckFinished: true,
+				drawnCards: [],
+				deckFinished: false,
+				isShuffling: false
 			}));
 		}
 	}
@@ -55,9 +86,12 @@ function Cards() {
 		);
 	}
 
+
+
 	return (
-		<div>
-			<DrawButton drawCard={drawCard} disabled={deck.deckFinished} />
+		<div className="Deck-cardarea Deck">
+			<Button handleClick={drawCard} btnText="GIMME A CARD" disabled={deck.deckFinished} />
+			<Button handleClick={shuffleCards} btnText="Shuffle Cards" disabled={deck.isShuffling} />
 			{renderCards()}
 		</div>
 	);
