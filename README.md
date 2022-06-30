@@ -1,4 +1,137 @@
-# Getting Started with Create React App
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+<div id="top"></div>
+
+<h1 align="center">React-Effects-Refs</h1>
+
+  <p align="center">
+    A react app, using DeckOfCardsAPI and the useEffect hook, plus some fun css!
+    <br />
+    <a href="https://github.com/calebthewood/express-jobly/issues">Request Feature</a>
+  </p>
+</div>
+
+https://www.loom.com/share/4cdf81084bbc4db6ac5b26b85058a31d
+
+<img src="./public/ScreenShot-2022-06-29.png" alt="screen shot" width="500" align="center">
+
+<hr>
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#create-react-app">Create React App</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+
+
+### Built With
+
+* [ReactJS](https://reactjs.org/)
+* [React-DOM](https://reactjs.org/docs/react-dom.html)
+* [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+* [AXIOS](https://axios-http.com/docs/intro)
+* [deckofcards API](http://deckofcardsapi.com/)
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+- On loading, useEffect makes an AJAX request to create a new deck, and generate a unique deckId.
+- The "Gimme a Card" button makes AJAX request to get a new card using the deckId.
+- The "Shuffle" button clears the dom of all cards, and sends an AJAX request to shuffle the deck.
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Improve button styling
+- [ ] Adjust CSS to make cards "stack"
+- [ ] Add a title section
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+## Contact
+
+Questions? - I'm on twitter [@calebthewood](https://twitter.com/calebthewood) - or email: calebwood.cs@gmail.com
+
+Check out my [personal site!](https://www.calebwood.dev/)
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [Rithm School](https://www.rithmschool.com/)
+* [Deck of Cards API](http://deckofcardsapi.com/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/calebthewood/react-productiv.svg?style=for-the-badge
+[contributors-url]: https://github.com/calebthewood/react-productiv/graphs/contributors
+
+[issues-shield]: https://img.shields.io/github/issues/calebthewood/react-productiv.svg?style=for-the-badge
+[issues-url]: https://github.com/calebthewood/react-productiv/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/caleb-wood-440b37168
+
+
+
+<hr>
+
+## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
