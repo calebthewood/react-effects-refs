@@ -13,7 +13,9 @@
 
 https://www.loom.com/share/4cdf81084bbc4db6ac5b26b85058a31d
 
-<img src="./public/ScreenShot-2022-06-29.png" alt="screen shot" width="500" align="center">
+<hr>
+
+<img src="./public/screenshot-card.png" alt="screen shot" width="500" align="center">
 
 <hr>
 
